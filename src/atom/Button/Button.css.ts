@@ -1,5 +1,5 @@
 require("./Button.css");
 const styles = {
-  button: ".button_2gK3Z",
+  button: "button_oTI7y",
 };
 export default styles;

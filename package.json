@@ -1,6 +1,6 @@
 {
   "name": "@bs/uikit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Blueshift UI Kit for On-Prem and general reusable react components",
   "main": "lib/index.ts",
   "dist": {},
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@bs/postcss-typify": "^1.0.1",
+    "@bs/postcss-typify": "^1.0.4",
     "autoprefixer": "^9.4.7",
     "css-loader": "^2.1.0",
     "cssnano": "^4.1.8",
