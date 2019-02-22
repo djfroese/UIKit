@@ -1,3 +1,4 @@
 import { Button } from './atom/Button';
+import { Link } from './atom/Link';
 
-export { Button };
+export { Button, Link };

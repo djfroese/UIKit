@@ -6,7 +6,9 @@ const autoprefixer = require('autoprefixer');
 const concatCss = require('gulp-concat-css');
 const ts = require('gulp-typescript');
 
-var tsProject = ts.createProject('tsconfig.json');
+var tsProject = ts.createProject('tsconfig.json',{
+  declaration: true
+});
 
 
 function css() {
@@ -30,7 +32,7 @@ function bundleCss() {
 function compile() {
   return tsProject.src()
     .pipe(tsProject())
-    .js.pipe(gulp.dest("lib"));
+    .pipe(gulp.dest("lib"));
 }
 
 exports.default = gulp.series([css, bundleCss]);;
