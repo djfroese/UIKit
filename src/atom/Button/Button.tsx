@@ -8,7 +8,7 @@ export class Button extends React.Component<any, any> {
 
   render(): JSX.Element {
     return (
-      <button className={styles.button} type='button'>Test</button>
+      <button className={styles.button} type='button'>{this.props.children}</button>
     );
   }
 }

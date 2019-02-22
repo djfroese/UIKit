@@ -1,6 +1,5 @@
-$buttonColor: #095cb0;
 
 .button {
-  background-color: $buttonColor;
+  background-color: purple;
   color: white;
 }
