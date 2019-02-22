@@ -1,11 +1,19 @@
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
-const typify = require('@bs/postcss-typify');;
+const typify = require('@bs/postcss-typify');
+const cssnano = require('cssnano');
+const autoprefixer = require('autoprefixer');
+const concatCss = require('gulp-concat-css');
+const ts = require('gulp-typescript');
+
+var tsProject = ts.createProject('tsconfig.json');
 
 
 function css() {
   var processors = [
-    typify({outDir: "./lib", sourceDir: "./src"})
+    autoprefixer(),
+    typify({outDir: "./lib", sourceDir: "./src"}),
+    //cssnano()
   ];
 
   return gulp.src('./src/**/**/*.css')
@@ -13,4 +21,18 @@ function css() {
     .pipe(gulp.dest('./lib'));
 }
 
-exports.default = css;
+function bundleCss() {
+  return gulp.src('./lib/**/**/*.css')
+    .pipe(concatCss("bsuikit.css"))
+    .pipe(gulp.dest('./dist/'));
+}
+
+function compile() {
+  return tsProject.src()
+    .pipe(tsProject())
+    .js.pipe(gulp.dest("lib"));
+}
+
+exports.default = gulp.series([css, bundleCss]);;
+exports.build = gulp.series([css, bundleCss, compile]);
+exports.css = css;
