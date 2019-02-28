@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from './Link.css';
+import styles from './Link.scss';
 
 export class Link extends React.Component<any, any> {
   constructor(props: any) {

@@ -5,6 +5,11 @@ const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
 const concatCss = require('gulp-concat-css');
 const ts = require('gulp-typescript');
+const postscss = require('postcss-scss');
+const sass = require('gulp-sass');
+
+sass.compiler = require('node-sass');
+
 
 var tsProject = ts.createProject('tsconfig.json',{
   declaration: true
@@ -16,8 +21,9 @@ function css() {
     typify({outDir: "./lib", sourceDir: "./src"})
   ];
 
-  return gulp.src('./src/**/**/*.css')
-    .pipe(postcss(processors))
+  return gulp.src('./src/**/**/*.scss')
+    .pipe(postcss(processors,{syntax: postscss}))
+    .pipe(sass())
     .pipe(gulp.dest('./lib'));
 }
 
@@ -26,7 +32,6 @@ function bundleCss() {
     autoprefixer(),
     cssnano()
   ];
-
 
   return gulp.src('./lib/**/**/*.css')
     .pipe(concatCss("bsuikit.css"))

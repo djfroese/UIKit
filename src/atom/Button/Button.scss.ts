@@ -1,6 +1,6 @@
-require("./Button.css");
+require("./Button.scss");
 const styles = {
   button: "button_oTI7y",
-  buttonDefault: "button_default_19s8C",
+  buttonDefault: "buttonDefault_2_Ror",
 };
 export default styles;

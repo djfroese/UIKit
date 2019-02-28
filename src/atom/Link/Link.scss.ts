@@ -1,4 +1,4 @@
-require("./Link.css");
+require("./Link.scss");
 const styles = {
   link: "link_UQNKE",
   linkHover: "linkHover_GYEKA",
