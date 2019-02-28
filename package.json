@@ -1,6 +1,6 @@
 {
   "name": "@bs/uikit",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Blueshift UI Kit for On-Prem and general reusable react components",
   "main": "lib/index.ts",
   "dist": {},
