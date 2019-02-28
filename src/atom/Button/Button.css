@@ -1,5 +1,10 @@
-
 .button {
   background-color: purple;
   color: white;
+}
+
+.button_default {
+  background-color: white;
+  border-color: black;
+  color: black;
 }

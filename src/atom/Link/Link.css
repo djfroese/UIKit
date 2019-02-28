@@ -6,3 +6,7 @@
 .linkHover {
   color: blue;
 }
+
+.linkhover > .linkbutton + .linktest[src='ll'] .linkmore:hover {
+  color: black;
+}

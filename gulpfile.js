@@ -13,9 +13,7 @@ var tsProject = ts.createProject('tsconfig.json',{
 
 function css() {
   var processors = [
-    autoprefixer(),
-    typify({outDir: "./lib", sourceDir: "./src"}),
-    //cssnano()
+    typify({outDir: "./lib", sourceDir: "./src"})
   ];
 
   return gulp.src('./src/**/**/*.css')
@@ -24,8 +22,15 @@ function css() {
 }
 
 function bundleCss() {
+  var processors = [
+    autoprefixer(),
+    cssnano()
+  ];
+
+
   return gulp.src('./lib/**/**/*.css')
     .pipe(concatCss("bsuikit.css"))
+    .pipe(postcss(processors))
     .pipe(gulp.dest('./dist/'));
 }
 

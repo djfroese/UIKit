@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@bs/postcss-typify": "^1.0.4",
+    "@bs/postcss-typify": "^1.0.5",
+    "@types/node": "^11.9.5",
     "autoprefixer": "^9.4.7",
     "css-loader": "^2.1.0",
     "cssnano": "^4.1.8",
@@ -26,8 +27,8 @@
     "webpack": "^4.29.0"
   },
   "dependencies": {
-    "@types/node": "^11.9.4",
     "@types/react": "^16.8.1",
-    "@types/react-dom": "^16.0.11"
+    "@types/react-dom": "^16.0.11",
+    "css-selector-tokenizer": "^0.7.1"
   }
 }
